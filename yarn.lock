@@ -176,15 +176,6 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@bitjson/npm-scripts-info@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@bitjson/npm-scripts-info/-/npm-scripts-info-1.0.0.tgz#732426788b8861618b10c5d054f497fb4dd9165e"
-  integrity sha512-PcdVZdrLsgKVXUsnSdBCgs/409uTpZcX+Yaj+koojccWzTNTqd8pGJnBJHSxKNj0FKzNvs+SrT8tIaqaUuctDw==
-  dependencies:
-    chalk "^2.3.0"
-    meow "^4.0.0"
-    unquote "^1.1.0"
-
 "@commitlint/execute-rule@^9.1.1":
   version "9.1.1"
   resolved "https://registry.yarnpkg.com/@commitlint/execute-rule/-/execute-rule-9.1.1.tgz#59bfe018d85545881e4bd1a47f9cd155b2df4c2c"
@@ -1004,7 +995,7 @@ commander@^2.12.1, commander@^2.18.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
-commitizen@^4.0.3:
+commitizen@^4.0.3, commitizen@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/commitizen/-/commitizen-4.1.2.tgz#6095eb825fd3f0d3611df88e6803c69b23307e9a"
   integrity sha512-LBxTQKHbVgroMz9ohpm86N+GfJobonGyvDc3zBGdZazbwCLz2tqLa48Rf2TnAdKx7/06W1i1R3SXUt5QW97qVQ==
@@ -3508,6 +3499,15 @@ npm-run-path@^2.0.0:
   integrity sha1-NakjLfo11wZ7TLLd8jV7GHFTbF8=
   dependencies:
     path-key "^2.0.0"
+
+npm-scripts-info@^0.3.9:
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/npm-scripts-info/-/npm-scripts-info-0.3.9.tgz#464e4178218e454564adca7ba71925bc71a4973d"
+  integrity sha512-r3kftwUxThTxQoZ+RoR8xVIL1FOmqpCM6+7BH6jR4HPdigNbBs9Bg1nt3Qrqn2b8jj4NrE69+kWE3EkmNxkmkg==
+  dependencies:
+    chalk "^2.3.0"
+    meow "^4.0.0"
+    unquote "^1.1.0"
 
 null-check@^1.0.0:
   version "1.0.0"

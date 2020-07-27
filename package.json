@@ -1,5 +1,5 @@
 {
-  "name": "hasura-sdk",
+  "name": "@aaronhayes/hasura-sdk",
   "version": "1.0.1",
   "description": "Hasura Schema/Metadata API SDK. Written in TypeScript!",
   "main": "build/main/index.js",

@@ -1,9 +1,25 @@
-# Hasura Schema/Metadata SDK
+<h1 align="center">Hasura SDK</h1>
+<h2 align="center">Hasura Schema and Metadata Node SDK</h2>
+
+<p align="center">
+ <a href="https://badge.fury.io/js/%40aaronhayes%2Fhasura-sdk"><img src="https://badge.fury.io/js/%40aaronhayes%2Fhasura-sdk.svg" alt="npm version" height="18"></a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-yellow.svg" alt="license: MIT" />
+  </a>
+  <a href="https://prettier.io">
+    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="code style: prettier" />
+  </a>
+  <a href="https://circleci.com/gh/aaronhayes/hasura-sdk">
+    <img src="https://circleci.com/gh/aaronhayes/hasura-sdk.svg?style=svg"/>
+  </a>
+</p>
+
+---
+
+Hasura Schema/Metadata API SDK. Written in TypeScript!
 
 - ✅ 100% in TypeScript
 - 🏋️ Lightweight
-
-Hasura Schema/Metadata API SDK. Written in TypeScript!
 
 ## Installation
 
@@ -21,10 +37,10 @@ Hasura Schema/Metadata API SDK. Written in TypeScript!
 import Hasura from '@aaronhayes/hasura-sdk`;
 
 // Note: just the base url - don't add /v1/graphql!
-const HASURA_GRAPHQL_ENDPOINT = 'http://localhost:8080'; 
+const HASURA_GRAPHQL_ENDPOINT = 'http://localhost:8080';
 
 // Hint: use process.env.HASURA_GRAPHQL_ADMIN_SECRET
-const HASURA_GRAPHQL_ADMIN_SECRET = 'yousecret'; 
+const HASURA_GRAPHQL_ADMIN_SECRET = 'yousecret';
 
 const hasura = new Hasura({
     endpoint: HASURA_GRAPHQL_ENDPOINT,
@@ -64,7 +80,7 @@ hasura.createCronTrigger({
 
 ## Schema/Metadata API References
 
-- [Full documentation](aaronhayes.github.io/hasura-sdk/) 
+- [Full documentation](aaronhayes.github.io/hasura-sdk/)
 - [Hasura Docs](https://hasura.io/docs/1.0/graphql/manual/api-reference/schema-metadata-api/index.html#metadata-apis)
 
 ## Give us a star!

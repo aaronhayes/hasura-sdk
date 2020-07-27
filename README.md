@@ -64,8 +64,9 @@ hasura.createCronTrigger({
 
 ## Schema/Metadata API References
 
-Full for documentation see [Hasura Docs](https://hasura.io/docs/1.0/graphql/manual/api-reference/schema-metadata-api/index.html#metadata-apis)
+- [Full documentation](aaronhayes.github.io/hasura-sdk/) 
+- [Hasura Docs](https://hasura.io/docs/1.0/graphql/manual/api-reference/schema-metadata-api/index.html#metadata-apis)
 
 ## Give us a star!
 
-Every start helps build a little more
+Every star helps build a little more

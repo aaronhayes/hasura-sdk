@@ -7,7 +7,9 @@
   "module": "build/module/index.js",
   "repository": "https://github.com/aaronhayes/hasura-sdk",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "hasura", "typescript", "metadata", "schema", "sdk", "query", "graphql"
+  ],
   "scripts": {
     "describe": "npm-scripts-info",
     "build": "run-s clean && run-p build:*",

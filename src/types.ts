@@ -1,8 +1,10 @@
+import { AxiosResponse } from 'axios';
+
 export type EventPayload = {
   readonly [key: string]: any;
 };
 
-export type EventHeaders = HeaderFromValue | HeaderFromEnv;
+export type EventHeader = HeaderFromValue | HeaderFromEnv;
 
 export type HeaderFromValue = {
   readonly name: string;
@@ -14,7 +16,13 @@ export type HeaderFromEnv = {
   readonly value_from_env: string;
 };
 
-export type EventRetryConfig = {
+export type TriggerRetryConfig = {
+  readonly num_retries?: number;
+  readonly retry_interval_seconds?: number;
+  readonly timeout_seconds?: number;
+};
+
+export type TriggerRetryConfigST = {
   readonly num_retries?: number;
   readonly retry_interval_seconds?: number;
   readonly timeout_seconds?: number;
@@ -44,10 +52,10 @@ export type CreateCronTriggerParams = {
   readonly payload?: EventPayload;
 
   // List of headers to be sent with the webhook
-  readonly headers?: readonly EventHeaders[];
+  readonly headers?: readonly EventHeader[];
 
   // Retry configuration if scheduled invocation delivery fails
-  readonly retry_config?: EventRetryConfig;
+  readonly retry_config?: TriggerRetryConfigST;
 
   // Custom comment
   readonly comment?: string;
@@ -70,13 +78,71 @@ export type CreateScheduledEventParams = {
   readonly payload?: EventPayload;
 
   // List of headers to be sent with the webhook
-  readonly headers?: readonly EventHeaders[];
+  readonly headers?: readonly EventHeader[];
 
   // Retry configuration
-  readonly retry_config?: EventRetryConfig;
+  readonly retry_config?: TriggerRetryConfigST;
 
   // Custom comment
   readonly comment?: string;
+};
+
+export type QualifiedTable = {
+  // Table name
+  readonly name: string;
+
+  // Schema name
+  readonly schema: string;
+};
+
+export type PGColumn = string;
+
+export type OperationSpec = {
+  // List of columns or "*" to listen to changes
+  readonly columns: readonly PGColumn[] | '*';
+
+  // List of columns or "*" to send as part of webhook payload
+  readonly payload?: readonly PGColumn[] | '*';
+};
+
+export type CreateEventTriggerParams = {
+  // Name of the event trigger
+  readonly name: string;
+
+  // Object with table name and schema
+  readonly table: QualifiedTable;
+
+  // Full url of webhook
+  readonly webhook?: string;
+
+  // Envrionment variable name of webhook
+  readonly webhook_from_env?: string;
+
+  // Spec for insert operation
+  readonly insert?: OperationSpec;
+
+  // Sepc for update operation
+  readonly update?: OperationSpec;
+
+  // Spec for delete operation;
+  readonly delete?: OperationSpec;
+
+  // List of headers to be sent with the webhook
+  readonly headers?: readonly EventHeader[];
+
+  // Retry configuration
+  readonly retry_config?: TriggerRetryConfig;
+
+  // Replace existing trigger. default: false
+  readonly replace?: boolean;
+};
+
+export type InvokeEventTriggerParams = {
+  // Name of the event trigger
+  name: string;
+
+  // Some JSON payload to send to the trigger
+  payload: EventPayload;
 };
 
 export type HasuraQueryResponse = {
@@ -84,3 +150,5 @@ export type HasuraQueryResponse = {
   readonly args: object;
   readonly version?: number;
 };
+
+export type HasuraResponse = AxiosResponse<HasuraQueryResponse>;

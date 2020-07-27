@@ -1,48 +1,19 @@
-# https://circleci.com/docs/2.0/language-javascript/
-version: 2
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
 jobs:
-  'node-10':
-    docker:
-      - image: circleci/node:10
-    working_directory: ~/hasura-sdk
+  build-and-test:
+    executor:
+      name: node/default
     steps:
       - checkout
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-      - run: npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run: npm test
-      - run: npm run cov:send
-      - run: npm run cov:check
-  'node-latest':
-    docker:
-      - image: circleci/node:latest
-    working_directory: ~/hasura-sdk
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-      - run: npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run: npm test
-      - run: npm run cov:send
-      - run: npm run cov:check
-
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npm test
+            - run: npm run cov:send
+            - run: npm run cov:check=
 workflows:
-  version: 2
-  build:
-    jobs:
-      - 'node-10'
-      - 'node-latest'
+    build-and-test:
+      jobs:
+        - build-and-test

@@ -1,0 +1,214 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>hasura-sdk</title>
+	<meta name="description" content="Documentation for hasura-sdk">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">hasura-sdk</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>hasura-sdk</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#hasura-schemametadata-sdk" id="hasura-schemametadata-sdk" style="color: inherit; text-decoration: none;">
+					<h1>Hasura Schema/Metadata SDK</h1>
+				</a>
+				<ul>
+					<li>✅ 100% in TypeScript</li>
+					<li>🏋️ Lightweight</li>
+				</ul>
+				<p>Hasura Schema/Metadata API SDK. Written in TypeScript!</p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<a href="#yarn" id="yarn" style="color: inherit; text-decoration: none;">
+					<h3>yarn</h3>
+				</a>
+				<ul>
+					<li><code>yarn add @aaronhayes/hasura-sdk</code></li>
+				</ul>
+				<a href="#npm" id="npm" style="color: inherit; text-decoration: none;">
+					<h3>npm</h3>
+				</a>
+				<ul>
+					<li><code>npm install @aaronhayes/hasura-sdk</code></li>
+				</ul>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<pre><code class="language-JavaScript">import Hasura from &#x27;@aaronhayes/hasura-sdk`;
+
+// Note: just the base url - don&#x27;t add /v1/graphql!
+const HASURA_GRAPHQL_ENDPOINT = &#x27;http://localhost:8080&#x27;; 
+
+// Hint: use process.env.HASURA_GRAPHQL_ADMIN_SECRET
+const HASURA_GRAPHQL_ADMIN_SECRET = &#x27;yousecret&#x27;; 
+
+const hasura = new Hasura({
+    endpoint: HASURA_GRAPHQL_ENDPOINT,
+    adminSecret: HASURA_GRAPHQL_ADMIN_SECRET
+});
+
+// Using Async/Await Functions
+try {
+    const resp = await hasura.createCronTrigger({
+        name: &#x27;newcronjob&#x27;,
+        schedule: &#x27;* * * * *&#x27;,
+        webhook: &#x27;{{EVENT_BASE_URL}}/cron&#x27;,
+        payload: {
+            hello: &quot;world&quot;
+        },
+        comment: &#x27;test cron job every minute&#x27;
+    });
+} catch (error) {
+    // handle error
+}
+
+// Using Promises
+hasura.createCronTrigger({
+    name: &#x27;newcronjob&#x27;,
+    schedule: &#x27;* * * * *&#x27;,
+    webhook: &#x27;{{EVENT_BASE_URL}}/cron&#x27;,
+    payload: {
+        hello: &quot;world&quot;
+    },
+    comment: &#x27;test cron job every minute&#x27;
+}).then(data =&gt; {
+    // axios response
+}).catch(error =&gt; {
+    // handle error
+});</code></pre>
+				<a href="#schemametadata-api-references" id="schemametadata-api-references" style="color: inherit; text-decoration: none;">
+					<h2>Schema/Metadata API References</h2>
+				</a>
+				<p>Full for documentation see <a href="https://hasura.io/docs/1.0/graphql/manual/api-reference/schema-metadata-api/index.html#metadata-apis">Hasura Docs</a></p>
+				<a href="#give-us-a-star" id="give-us-a-star" style="color: inherit; text-decoration: none;">
+					<h2>Give us a star!</h2>
+				</a>
+				<p>Every start helps build a little more</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/hasura.html" class="tsd-kind-icon">Hasura</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#createcrontriggerparams" class="tsd-kind-icon">Create<wbr>Cron<wbr>Trigger<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#createscheduledeventparams" class="tsd-kind-icon">Create<wbr>Scheduled<wbr>Event<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#cronexpression" class="tsd-kind-icon">Cron<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#eventheaders" class="tsd-kind-icon">Event<wbr>Headers</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#eventpayload" class="tsd-kind-icon">Event<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#eventretryconfig" class="tsd-kind-icon">Event<wbr>Retry<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#hasuraconfig" class="tsd-kind-icon">Hasura<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#hasuraqueryresponse" class="tsd-kind-icon">Hasura<wbr>Query<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#headerfromenv" class="tsd-kind-icon">Header<wbr>From<wbr>Env</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#headerfromvalue" class="tsd-kind-icon">Header<wbr>From<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#webhookurl" class="tsd-kind-icon">Webhook<wbr>Url</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

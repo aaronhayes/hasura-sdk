@@ -13,7 +13,7 @@
     "typedef": [true, "call-signature"],
 
     // Immutability rules
-    "readonly-keyword": true,
+    "readonly-keyword": false,
     "readonly-array": true,
     "no-let": true,
     "no-object-mutation": true,
@@ -21,12 +21,12 @@
     "no-method-signature": true,
 
     // Functional style rules
-    "no-this": true,
-    "no-class": true,
+    "no-this": false,
+    "no-class": false,
     "no-mixed-interface": true,
     "no-expression-statement": [
       true,
-      { "ignore-prefix": ["console.", "process.exit"] }
+      { "ignore-prefix": ["console.", "process.exit", "this."] }
     ],
     "no-if-statement": true
     /* end tslint-immutable rules */

@@ -36,11 +36,11 @@
     "docs": "run-s doc:html && open-cli build/docs/index.html",
     "docs:html": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --out build/docs",
     "docs:json": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --json build/docs/typedoc.json",
-    "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
+    "docs:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
     "version": "standard-version",
     "reset": "git clean -dfx && git reset --hard && yarn",
     "clean": "trash build test",
-    "prepare-release": "run-s reset test cov:check doc:html version doc:publish"
+    "prepare-release": "run-s reset test cov:check docs:html version docs:publish"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",

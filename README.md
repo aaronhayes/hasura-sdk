@@ -83,6 +83,25 @@ hasura.createCronTrigger({
 - [Full documentation](aaronhayes.github.io/hasura-sdk/)
 - [Hasura Docs](https://hasura.io/docs/1.0/graphql/manual/api-reference/schema-metadata-api/index.html#metadata-apis)
 
+## Supported APIs
+
+We currently only support a small range of Hasura APIs. Be assured we working on adding more - if you need something be sure to create an issue!
+
+| API                  | Support |
+| -------------------- | ------- |
+| Run SQL              | No      |
+| Tables/Views         | No      |
+| Custom SQL Functions | No      |
+| Relationships        | No      |
+| Computed Fields      | No      |
+| Permissions          | No      |
+| Event Triggers       | Yes     |
+| Remote Schemas       | No      |
+| Query Collections    | No      |
+| Custom Types         | No      |
+| Actions              | No      |
+| Manage Metadata      | No      |
+
 ## Give us a star!
 
 Every star helps build a little more

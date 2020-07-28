@@ -119,7 +119,7 @@ const hasura = new Hasura({
 try {
     const resp = await hasura.createCronTrigger({
         name: &#x27;newcronjob&#x27;,
-        schedule: &#x27;* * * * *&#x27;,
+        schedule: &#x27;* * * * *&#x27;, // every minute
         webhook: &#x27;{{EVENT_BASE_URL}}/cron&#x27;,
         payload: {
             hello: &quot;world&quot;
@@ -187,8 +187,8 @@ hasura.createCronTrigger({
 							<td>No</td>
 						</tr>
 						<tr>
-							<td>Event Triggers</td>
-							<td>Yes</td>
+							<td><b>Event Triggers</b></td>
+							<td><b>Yes</b></td>
 						</tr>
 						<tr>
 							<td>Remote Schemas</td>

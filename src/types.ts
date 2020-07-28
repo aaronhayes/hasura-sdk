@@ -55,7 +55,7 @@ export type CreateCronTriggerParams = {
   readonly headers?: readonly EventHeader[];
 
   // Retry configuration if scheduled invocation delivery fails
-  readonly retry_config?: TriggerRetryConfigST;
+  readonly retry_conf?: TriggerRetryConfigST;
 
   // Custom comment
   readonly comment?: string;
@@ -81,7 +81,7 @@ export type CreateScheduledEventParams = {
   readonly headers?: readonly EventHeader[];
 
   // Retry configuration
-  readonly retry_config?: TriggerRetryConfigST;
+  readonly retry_conf?: TriggerRetryConfigST;
 
   // Custom comment
   readonly comment?: string;
@@ -131,7 +131,7 @@ export type CreateEventTriggerParams = {
   readonly headers?: readonly EventHeader[];
 
   // Retry configuration
-  readonly retry_config?: TriggerRetryConfig;
+  readonly retry_conf?: TriggerRetryConfig;
 
   // Replace existing trigger. default: false
   readonly replace?: boolean;

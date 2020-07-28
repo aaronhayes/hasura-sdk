@@ -51,7 +51,7 @@ const hasura = new Hasura({
 try {
     const resp = await hasura.createCronTrigger({
         name: 'newcronjob',
-        schedule: '* * * * *',
+        schedule: '* * * * *', // every minute
         webhook: '{{EVENT_BASE_URL}}/cron',
         payload: {
             hello: "world"
@@ -87,20 +87,20 @@ hasura.createCronTrigger({
 
 We currently only support a small range of Hasura APIs. Be assured we working on adding more - if you need something be sure to create an issue!
 
-| API                  | Support |
-| -------------------- | ------- |
-| Run SQL              | No      |
-| Tables/Views         | No      |
-| Custom SQL Functions | No      |
-| Relationships        | No      |
-| Computed Fields      | No      |
-| Permissions          | No      |
-| Event Triggers       | Yes     |
-| Remote Schemas       | No      |
-| Query Collections    | No      |
-| Custom Types         | No      |
-| Actions              | No      |
-| Manage Metadata      | No      |
+| API                   | Support    |
+| --------------------- | ---------- |
+| Run SQL               | No         |
+| Tables/Views          | No         |
+| Custom SQL Functions  | No         |
+| Relationships         | No         |
+| Computed Fields       | No         |
+| Permissions           | No         |
+| <b>Event Triggers</b> | <b>Yes</b> |
+| Remote Schemas        | No         |
+| Query Collections     | No         |
+| Custom Types          | No         |
+| Actions               | No         |
+| Manage Metadata       | No         |
 
 ## Give us a star!
 

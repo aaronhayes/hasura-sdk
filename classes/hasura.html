@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Hasura | hasura-sdk</title>
-	<meta name="description" content="Documentation for hasura-sdk">
+	<title>Hasura | @aaronhayes/hasura-sdk</title>
+	<meta name="description" content="Documentation for @aaronhayes/hasura-sdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">hasura-sdk</a>
+					<a href="../index.html" class="title">@aaronhayes/hasura-sdk</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -96,8 +96,13 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hasura.html#createcrontrigger" class="tsd-kind-icon">create<wbr>Cron<wbr>Trigger</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hasura.html#createeventtrigger" class="tsd-kind-icon">create<wbr>Event<wbr>Trigger</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hasura.html#createscheduledevent" class="tsd-kind-icon">create<wbr>Scheduled<wbr>Event</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hasura.html#deletecrontrigger" class="tsd-kind-icon">delete<wbr>Cron<wbr>Trigger</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hasura.html#deleteeventtrigger" class="tsd-kind-icon">delete<wbr>Event<wbr>Trigger</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="hasura.html#getheaders" class="tsd-kind-icon">get<wbr>Headers</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hasura.html#invokeeventtrigger" class="tsd-kind-icon">invoke<wbr>Event<wbr>Trigger</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hasura.html#redeliverevent" class="tsd-kind-icon">redeliver<wbr>Event</a></li>
 							</ul>
 						</section>
 					</div>
@@ -115,7 +120,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/7024c7d/src/index.ts#L13">index.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/aefde19/src/hasura.ts#L16">hasura.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -137,7 +142,7 @@
 					<div class="tsd-signature tsd-kind-icon">admin<wbr>Secret<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/7024c7d/src/index.ts#L12">index.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/aefde19/src/hasura.ts#L15">hasura.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -147,7 +152,7 @@
 					<div class="tsd-signature tsd-kind-icon">endpoint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/7024c7d/src/index.ts#L11">index.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/aefde19/src/hasura.ts#L14">hasura.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -157,7 +162,7 @@
 					<div class="tsd-signature tsd-kind-icon">query<wbr>Endpoint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/7024c7d/src/index.ts#L13">index.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/aefde19/src/hasura.ts#L16">hasura.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -168,13 +173,13 @@
 					<a name="createcrontrigger" class="tsd-anchor"></a>
 					<h3>create<wbr>Cron<wbr>Trigger</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Cron<wbr>Trigger<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../globals.html#createcrontriggerparams" class="tsd-signature-type">CreateCronTriggerParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AxiosResponse</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraqueryresponse" class="tsd-signature-type">HasuraQueryResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Cron<wbr>Trigger<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../globals.html#createcrontriggerparams" class="tsd-signature-type">CreateCronTriggerParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/7024c7d/src/index.ts#L25">index.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/aefde19/src/hasura.ts#L38">hasura.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -191,7 +196,38 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AxiosResponse</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraqueryresponse" class="tsd-signature-type">HasuraQueryResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="createeventtrigger" class="tsd-anchor"></a>
+					<h3>create<wbr>Event<wbr>Trigger</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Event<wbr>Trigger<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../globals.html#createeventtriggerparams" class="tsd-signature-type">CreateEventTriggerParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/aefde19/src/hasura.ts#L110">hasura.ts:110</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a new event trigger or replace an existing event trigger.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>params: <a href="../globals.html#createeventtriggerparams" class="tsd-signature-type">CreateEventTriggerParams</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>CreateEventTriggerParams</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -199,13 +235,13 @@
 					<a name="createscheduledevent" class="tsd-anchor"></a>
 					<h3>create<wbr>Scheduled<wbr>Event</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Scheduled<wbr>Event<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../globals.html#createscheduledeventparams" class="tsd-signature-type">CreateScheduledEventParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AxiosResponse</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraqueryresponse" class="tsd-signature-type">HasuraQueryResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Scheduled<wbr>Event<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../globals.html#createscheduledeventparams" class="tsd-signature-type">CreateScheduledEventParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/7024c7d/src/index.ts#L63">index.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/aefde19/src/hasura.ts#L84">hasura.ts:84</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -222,7 +258,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AxiosResponse</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraqueryresponse" class="tsd-signature-type">HasuraQueryResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -230,13 +266,13 @@
 					<a name="deletecrontrigger" class="tsd-anchor"></a>
 					<h3>delete<wbr>Cron<wbr>Trigger</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">delete<wbr>Cron<wbr>Trigger<span class="tsd-signature-symbol">(</span>cronName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AxiosResponse</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraqueryresponse" class="tsd-signature-type">HasuraQueryResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Cron<wbr>Trigger<span class="tsd-signature-symbol">(</span>cronName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/7024c7d/src/index.ts#L48">index.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/aefde19/src/hasura.ts#L65">hasura.ts:65</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -253,7 +289,122 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AxiosResponse</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraqueryresponse" class="tsd-signature-type">HasuraQueryResponse</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deleteeventtrigger" class="tsd-anchor"></a>
+					<h3>delete<wbr>Event<wbr>Trigger</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Event<wbr>Trigger<span class="tsd-signature-symbol">(</span>triggerName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/aefde19/src/hasura.ts#L144">hasura.ts:144</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Used to delete an event trigger</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>triggerName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>string</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="getheaders" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Headers</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Headers<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/aefde19/src/hasura.ts#L28">hasura.ts:28</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get authentication headers</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="invokeeventtrigger" class="tsd-anchor"></a>
+					<h3>invoke<wbr>Event<wbr>Trigger</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">invoke<wbr>Event<wbr>Trigger<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../globals.html#invokeeventtriggerparams" class="tsd-signature-type">InvokeEventTriggerParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/aefde19/src/hasura.ts#L182">hasura.ts:182</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Used to invoke an event trigger with custom payload</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>params: <a href="../globals.html#invokeeventtriggerparams" class="tsd-signature-type">InvokeEventTriggerParams</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>InvokeEventTriggerParams</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="redeliverevent" class="tsd-anchor"></a>
+					<h3>redeliver<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">redeliver<wbr>Event<span class="tsd-signature-symbol">(</span>eventId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aaronhayes/hasura-sdk/blob/aefde19/src/hasura.ts#L163">hasura.ts:163</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Redeliver an existing event.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>eventId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>string</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hasuraresponse" class="tsd-signature-type">HasuraResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -290,10 +441,25 @@
 								<a href="hasura.html#createcrontrigger" class="tsd-kind-icon">create<wbr>Cron<wbr>Trigger</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="hasura.html#createeventtrigger" class="tsd-kind-icon">create<wbr>Event<wbr>Trigger</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="hasura.html#createscheduledevent" class="tsd-kind-icon">create<wbr>Scheduled<wbr>Event</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="hasura.html#deletecrontrigger" class="tsd-kind-icon">delete<wbr>Cron<wbr>Trigger</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="hasura.html#deleteeventtrigger" class="tsd-kind-icon">delete<wbr>Event<wbr>Trigger</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="hasura.html#getheaders" class="tsd-kind-icon">get<wbr>Headers</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="hasura.html#invokeeventtrigger" class="tsd-kind-icon">invoke<wbr>Event<wbr>Trigger</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="hasura.html#redeliverevent" class="tsd-kind-icon">redeliver<wbr>Event</a>
 							</li>
 						</ul>
 					</li>
@@ -303,19 +469,19 @@
 						<a href="../globals.html#createcrontriggerparams" class="tsd-kind-icon">Create<wbr>Cron<wbr>Trigger<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#createeventtriggerparams" class="tsd-kind-icon">Create<wbr>Event<wbr>Trigger<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#createscheduledeventparams" class="tsd-kind-icon">Create<wbr>Scheduled<wbr>Event<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#cronexpression" class="tsd-kind-icon">Cron<wbr>Expression</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="../globals.html#eventheaders" class="tsd-kind-icon">Event<wbr>Headers</a>
+						<a href="../globals.html#eventheader" class="tsd-kind-icon">Event<wbr>Header</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#eventpayload" class="tsd-kind-icon">Event<wbr>Payload</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="../globals.html#eventretryconfig" class="tsd-kind-icon">Event<wbr>Retry<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#hasuraconfig" class="tsd-kind-icon">Hasura<wbr>Config</a>
@@ -324,10 +490,31 @@
 						<a href="../globals.html#hasuraqueryresponse" class="tsd-kind-icon">Hasura<wbr>Query<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#hasuraresponse" class="tsd-kind-icon">Hasura<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#headerfromenv" class="tsd-kind-icon">Header<wbr>From<wbr>Env</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#headerfromvalue" class="tsd-kind-icon">Header<wbr>From<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#invokeeventtriggerparams" class="tsd-kind-icon">Invoke<wbr>Event<wbr>Trigger<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#operationspec" class="tsd-kind-icon">Operation<wbr>Spec</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#pgcolumn" class="tsd-kind-icon">PGColumn</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#qualifiedtable" class="tsd-kind-icon">Qualified<wbr>Table</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#triggerretryconfig" class="tsd-kind-icon">Trigger<wbr>Retry<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#triggerretryconfigst" class="tsd-kind-icon">Trigger<wbr>Retry<wbr>ConfigST</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#webhookurl" class="tsd-kind-icon">Webhook<wbr>Url</a>
@@ -345,6 +532,9 @@
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
 			</ul>
 		</div>
 	</div>

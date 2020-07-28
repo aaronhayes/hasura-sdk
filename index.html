@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>hasura-sdk</title>
-	<meta name="description" content="Documentation for hasura-sdk">
+	<title>@aaronhayes/hasura-sdk</title>
+	<meta name="description" content="Documentation for @aaronhayes/hasura-sdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">hasura-sdk</a>
+					<a href="index.html" class="title">@aaronhayes/hasura-sdk</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1>hasura-sdk</h1>
+			<h1>@aaronhayes/hasura-sdk</h1>
 		</div>
 	</div>
 </header>
@@ -64,14 +64,26 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#hasura-schemametadata-sdk" id="hasura-schemametadata-sdk" style="color: inherit; text-decoration: none;">
-					<h1>Hasura Schema/Metadata SDK</h1>
-				</a>
+				<h1 align="center">Hasura SDK</h1>
+				<h2 align="center">Hasura Schema and Metadata Node SDK</h2>
+				<p align="center">
+					<a href="https://badge.fury.io/js/%40aaronhayes%2Fhasura-sdk"><img src="https://badge.fury.io/js/%40aaronhayes%2Fhasura-sdk.svg" alt="npm version" height="18"></a>
+					<a href="LICENSE">
+						<img src="https://img.shields.io/badge/license-MIT-yellow.svg" alt="license: MIT" />
+					</a>
+					<a href="https://prettier.io">
+						<img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="code style: prettier" />
+					</a>
+					<a href="https://circleci.com/gh/aaronhayes/hasura-sdk">
+						<img src="https://circleci.com/gh/aaronhayes/hasura-sdk.svg?style=svg"/>
+					</a>
+				</p>
+				<hr>
+				<p>Hasura Schema/Metadata API SDK. Written in TypeScript!</p>
 				<ul>
 					<li>✅ 100% in TypeScript</li>
 					<li>🏋️ Lightweight</li>
 				</ul>
-				<p>Hasura Schema/Metadata API SDK. Written in TypeScript!</p>
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>Installation</h2>
 				</a>
@@ -93,10 +105,10 @@
 				<pre><code class="language-JavaScript">import Hasura from &#x27;@aaronhayes/hasura-sdk`;
 
 // Note: just the base url - don&#x27;t add /v1/graphql!
-const HASURA_GRAPHQL_ENDPOINT = &#x27;http://localhost:8080&#x27;; 
+const HASURA_GRAPHQL_ENDPOINT = &#x27;http://localhost:8080&#x27;;
 
 // Hint: use process.env.HASURA_GRAPHQL_ADMIN_SECRET
-const HASURA_GRAPHQL_ADMIN_SECRET = &#x27;yousecret&#x27;; 
+const HASURA_GRAPHQL_ADMIN_SECRET = &#x27;yousecret&#x27;;
 
 const hasura = new Hasura({
     endpoint: HASURA_GRAPHQL_ENDPOINT,
@@ -136,9 +148,69 @@ hasura.createCronTrigger({
 					<h2>Schema/Metadata API References</h2>
 				</a>
 				<ul>
-					<li><a href="aaronhayes.github.io/hasura-sdk/">Full documentation</a> </li>
+					<li><a href="aaronhayes.github.io/hasura-sdk/">Full documentation</a></li>
 					<li><a href="https://hasura.io/docs/1.0/graphql/manual/api-reference/schema-metadata-api/index.html#metadata-apis">Hasura Docs</a></li>
 				</ul>
+				<a href="#supported-apis" id="supported-apis" style="color: inherit; text-decoration: none;">
+					<h2>Supported APIs</h2>
+				</a>
+				<p>We currently only support a small range of Hasura APIs. Be assured we working on adding more - if you need something be sure to create an issue!</p>
+				<table>
+					<thead>
+						<tr>
+							<th>API</th>
+							<th>Support</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>Run SQL</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td>Tables/Views</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td>Custom SQL Functions</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td>Relationships</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td>Computed Fields</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td>Permissions</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td>Event Triggers</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td>Remote Schemas</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td>Query Collections</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td>Custom Types</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td>Actions</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td>Manage Metadata</td>
+							<td>No</td>
+						</tr>
+				</tbody></table>
 				<a href="#give-us-a-star" id="give-us-a-star" style="color: inherit; text-decoration: none;">
 					<h2>Give us a star!</h2>
 				</a>
@@ -162,19 +234,19 @@ hasura.createCronTrigger({
 						<a href="globals.html#createcrontriggerparams" class="tsd-kind-icon">Create<wbr>Cron<wbr>Trigger<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#createeventtriggerparams" class="tsd-kind-icon">Create<wbr>Event<wbr>Trigger<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#createscheduledeventparams" class="tsd-kind-icon">Create<wbr>Scheduled<wbr>Event<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#cronexpression" class="tsd-kind-icon">Cron<wbr>Expression</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#eventheaders" class="tsd-kind-icon">Event<wbr>Headers</a>
+						<a href="globals.html#eventheader" class="tsd-kind-icon">Event<wbr>Header</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#eventpayload" class="tsd-kind-icon">Event<wbr>Payload</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#eventretryconfig" class="tsd-kind-icon">Event<wbr>Retry<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#hasuraconfig" class="tsd-kind-icon">Hasura<wbr>Config</a>
@@ -183,10 +255,31 @@ hasura.createCronTrigger({
 						<a href="globals.html#hasuraqueryresponse" class="tsd-kind-icon">Hasura<wbr>Query<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#hasuraresponse" class="tsd-kind-icon">Hasura<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#headerfromenv" class="tsd-kind-icon">Header<wbr>From<wbr>Env</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#headerfromvalue" class="tsd-kind-icon">Header<wbr>From<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#invokeeventtriggerparams" class="tsd-kind-icon">Invoke<wbr>Event<wbr>Trigger<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#operationspec" class="tsd-kind-icon">Operation<wbr>Spec</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#pgcolumn" class="tsd-kind-icon">PGColumn</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#qualifiedtable" class="tsd-kind-icon">Qualified<wbr>Table</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#triggerretryconfig" class="tsd-kind-icon">Trigger<wbr>Retry<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#triggerretryconfigst" class="tsd-kind-icon">Trigger<wbr>Retry<wbr>ConfigST</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#webhookurl" class="tsd-kind-icon">Webhook<wbr>Url</a>
@@ -204,6 +297,9 @@ hasura.createCronTrigger({
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
 			</ul>
 		</div>
 	</div>

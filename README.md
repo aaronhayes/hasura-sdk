@@ -16,6 +16,8 @@
 
 ---
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/41e463603f224c22b9a2492cd35e2a7d)](https://app.codacy.com/manual/aaronhayes/hasura-sdk?utm_source=github.com&utm_medium=referral&utm_content=aaronhayes/hasura-sdk&utm_campaign=Badge_Grade_Settings)
+
 Hasura Schema/Metadata API SDK. Written in TypeScript!
 
 - ✅ 100% in TypeScript

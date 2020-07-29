@@ -197,15 +197,19 @@ class Hasura {
    * @params params RunSQLParams
    */
   runSQL(params: RunSQLParams): Promise<HasuraRunSQLAxiosResponse> {
-    return axios.post<HasuraRunSQLResponse>(this.queryEndpoint, {
-      type: 'run_sql',
-      args: {
-        sql: params.sql,
-        cascade: params.cascade,
-        check_metadata_consistency: params.check_metadata_consistency,
-        read_only: params.read_only
-      }
-    });
+    return axios.post<HasuraRunSQLResponse>(
+      this.queryEndpoint,
+      {
+        type: 'run_sql',
+        args: {
+          sql: params.sql,
+          cascade: params.cascade,
+          check_metadata_consistency: params.check_metadata_consistency,
+          read_only: params.read_only
+        }
+      },
+      { headers: this.getHeaders() }
+    );
   }
 }
 

@@ -22,7 +22,7 @@ test('getHeaders', (t) => {
     adminSecret: ADMIN_SECRET,
   });
 
-  t.is(hasura.getHeaders(), { 'x-hasura-admin-secret': ADMIN_SECRET });
+  t.deepEqual(hasura.getHeaders(), { 'x-hasura-admin-secret': ADMIN_SECRET });
 });
 
 test('createEventTrigger Error', async (t) => {
@@ -65,15 +65,17 @@ test('deleteCronTrigger', async (t) => {
 
   await t.notThrowsAsync(async () => {
     await hasura.createCronTrigger({
-      name: 'test_cron_delete',
+      name: 'test_cron',
       schedule: '* * * * *',
       webhook: 'https://httpbin.org/post',
       payload: {
         hello: 'world',
       },
+      replace: true,
+      include_in_metadata: true
     });
 
-    await hasura.deleteCronTrigger('test_cron_delete');
+    await hasura.deleteCronTrigger('test_cron');
   });
 });
 

@@ -152,3 +152,26 @@ export type HasuraQueryResponse = {
 };
 
 export type HasuraResponse = AxiosResponse<HasuraQueryResponse>;
+
+export type RunSQLParams = {
+  // The SQL to be executed
+  sql: string;
+
+  // When set to true, the effect is cascaded
+  cascade?: boolean;
+
+  // When set to false, the sql is executed without checking metadata dependencies
+  check_metadata_consistency?: boolean;
+
+  // When true the request will be run in READ ONLY transaction acccess mode
+  read_only?: boolean;
+};
+
+export type ResultTuple = string[];
+
+export type HasuraRunSQLResponse = {
+  result_type: string;
+  result?: ResultTuple[];
+};
+
+export type HasuraRunSQLAxiosResponse = AxiosResponse<HasuraRunSQLResponse>;

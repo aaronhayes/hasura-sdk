@@ -94,9 +94,6 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "prettier": {
-    "singleQuote": true
-  },
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript",
     "exclude": [

@@ -64,3 +64,5 @@ jobs:
         run: yarn cov:check
       - name: Upload Coverage to CodeCov
         uses: codecov/codecov-action@v1
+        with:
+          directory: ./coverage/

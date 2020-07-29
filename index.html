@@ -74,15 +74,19 @@
 					<a href="https://prettier.io">
 						<img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="code style: prettier" />
 					</a>
-					<a href="https://circleci.com/gh/aaronhayes/hasura-sdk">
-						<img src="https://circleci.com/gh/aaronhayes/hasura-sdk.svg?style=svg"/>
+					<a href="https://github.com/aaronhayes/hasura-sdk/actions">
+						<img src="https://github.com/aaronhayes/hasura-sdk/workflows/Tests/badge.svg?branch=master"/>
 					</a>
+					<a href="https://codecov.io/gh/aaronhayes/hasura-sdk">
+						<img src="https://codecov.io/gh/aaronhayes/hasura-sdk/branch/master/graph/badge.svg" />
+					</a>
+					<a href="https://codeclimate.com/github/aaronhayes/hasura-sdk/maintainability"><img src="https://api.codeclimate.com/v1/badges/02998e4b9a8f31ab2f6d/maintainability" /></a>
 				</p>
 				<hr>
 				<p>Hasura Schema/Metadata API SDK. Written in TypeScript!</p>
 				<ul>
 					<li>✅ 100% in TypeScript</li>
-					<li>🏋️ Lightweight</li>
+					<li>🏋️ Uses Axios under the hood</li>
 				</ul>
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>Installation</h2>
@@ -163,8 +167,8 @@ hasura.createCronTrigger({
 						</tr>
 					</thead>
 					<tbody><tr>
-							<td>Run SQL</td>
-							<td>No</td>
+							<td><b>Run SQL</b></td>
+							<td><b>Yes</b></td>
 						</tr>
 						<tr>
 							<td>Tables/Views</td>
@@ -258,6 +262,12 @@ hasura.createCronTrigger({
 						<a href="globals.html#hasuraresponse" class="tsd-kind-icon">Hasura<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#hasurarunsqlaxiosresponse" class="tsd-kind-icon">Hasura<wbr>RunSQLAxios<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#hasurarunsqlresponse" class="tsd-kind-icon">Hasura<wbr>RunSQLResponse</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#headerfromenv" class="tsd-kind-icon">Header<wbr>From<wbr>Env</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
@@ -274,6 +284,12 @@ hasura.createCronTrigger({
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#qualifiedtable" class="tsd-kind-icon">Qualified<wbr>Table</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#resulttuple" class="tsd-kind-icon">Result<wbr>Tuple</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#runsqlparams" class="tsd-kind-icon">RunSQLParams</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#triggerretryconfig" class="tsd-kind-icon">Trigger<wbr>Retry<wbr>Config</a>

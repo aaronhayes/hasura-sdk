@@ -1,0 +1,66 @@
+name: Test
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - '**'
+      - '!*.md'
+  push:
+    branches: ['**']
+    paths:
+      - '**'
+      - '!*.md'
+env:
+  HASURA_GRAPHQL_ADMIN_SECRET: github_actions_test_key
+  POSTGRES_PASSWORD: github_actions_pg_password
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
+        options: --restart always --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+      hasura:
+        image: hasura/graphql-engine:v1.3.0
+        env:
+          HASURA_GRAPHQL_ENABLE_TELEMETRY: 'false'
+          HASURA_GRAPHQL_ADMIN_SECRET: ${{ env.HASURA_GRAPHQL_ADMIN_SECRET }}
+          HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:${{ env.POSTGRES_PASSWORD }}@postgres:5432/postgres
+        options: >-
+          --restart always
+          --health-cmd "printf 'GET /healthz HTTP/1.1\r\nHost: hasura\r\n\n' | nc -z hasura 8080 > /dev/null 2>&1 || exit 1"
+          --health-interval 3s
+          --health-timeout 5s
+          --health-retries 5
+    container:
+      image: node:12
+      env:
+        HASURA_ADMIN_SECRET: ${{ env.HASURA_GRAPHQL_ADMIN_SECRET }}
+        HASURA_ENDPOINT: http://hasura:8080
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: yarn
+      - name: Run tests
+        run: yarn test
+      - name: Check Coverage
+        run: yarn cov:check
+      - name: Upload Coverage to CodeCov
+        run: yarn cov:send

@@ -12,6 +12,9 @@
   <a href="https://circleci.com/gh/aaronhayes/hasura-sdk">
     <img src="https://circleci.com/gh/aaronhayes/hasura-sdk.svg?style=svg"/>
   </a>
+  <a href="https://codecov.io/gh/aaronhayes/hasura-sdk">
+    <img src="https://codecov.io/gh/aaronhayes/hasura-sdk/branch/master/graph/badge.svg" />
+  </a>
 </p>
 
 ---
@@ -19,7 +22,7 @@
 Hasura Schema/Metadata API SDK. Written in TypeScript!
 
 - ✅ 100% in TypeScript
-- 🏋️ Lightweight
+- 🏋️ Uses Axios under the hood
 
 ## Installation
 

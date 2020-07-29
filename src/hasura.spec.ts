@@ -16,6 +16,15 @@ test('constructor', (t) => {
   t.is(hasura.queryEndpoint, `${ENDPOINT}/v1/query`);
 });
 
+test('getHeaders', (t) => {
+  const hasura = new Hasura({
+    endpoint: ENDPOINT,
+    adminSecret: ADMIN_SECRET,
+  });
+
+  t.is(hasura.getHeaders(), { 'x-hasura-admin-secret': ADMIN_SECRET });
+});
+
 test('createEventTrigger Error', async (t) => {
   const hasura = new Hasura({
     endpoint: ENDPOINT,

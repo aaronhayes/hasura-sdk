@@ -63,4 +63,4 @@ jobs:
       - name: Check Coverage
         run: yarn cov:check
       - name: Upload Coverage to CodeCov
-        run: yarn cov:send
+        uses: codecov/codecov-action@v1

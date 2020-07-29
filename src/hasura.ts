@@ -8,6 +8,9 @@ import {
   CreateEventTriggerParams,
   HasuraResponse,
   InvokeEventTriggerParams,
+  RunSQLParams,
+  HasuraRunSQLAxiosResponse,
+  HasuraRunSQLResponse
 } from './types';
 
 class Hasura {
@@ -27,7 +30,7 @@ class Hasura {
    */
   getHeaders(): object {
     return {
-      'x-hasura-admin-secret': this.adminSecret,
+      'x-hasura-admin-secret': this.adminSecret
     };
   }
 
@@ -49,11 +52,11 @@ class Hasura {
           retry_conf: params.retry_conf,
           include_in_metadata: params.include_in_metadata ?? false,
           replace: params.replace ?? false,
-          comment: params.comment,
-        },
+          comment: params.comment
+        }
       },
       {
-        headers: this.getHeaders(),
+        headers: this.getHeaders()
       }
     );
   }
@@ -68,11 +71,11 @@ class Hasura {
       {
         type: 'delete_cron_trigger',
         args: {
-          name: cronName,
-        },
+          name: cronName
+        }
       },
       {
-        headers: this.getHeaders(),
+        headers: this.getHeaders()
       }
     );
   }
@@ -81,9 +84,7 @@ class Hasura {
    * Create a new scheduled event
    * @param params CreateScheduledEventParams
    */
-  createScheduledEvent(
-    params: CreateScheduledEventParams
-  ): Promise<HasuraResponse> {
+  createScheduledEvent(params: CreateScheduledEventParams): Promise<HasuraResponse> {
     return axios.post<HasuraQueryResponse>(
       this.queryEndpoint,
       {
@@ -94,11 +95,11 @@ class Hasura {
           payload: params.payload,
           headers: params.headers,
           retry_conf: params.retry_conf,
-          comment: params.comment,
-        },
+          comment: params.comment
+        }
       },
       {
-        headers: this.getHeaders(),
+        headers: this.getHeaders()
       }
     );
   }
@@ -107,9 +108,7 @@ class Hasura {
    * Create a new event trigger or replace an existing event trigger.
    * @param params CreateEventTriggerParams
    */
-  createEventTrigger(
-    params: CreateEventTriggerParams
-  ): Promise<HasuraResponse> {
+  createEventTrigger(params: CreateEventTriggerParams): Promise<HasuraResponse> {
     if (!params.webhook && !params.webhook_from_env) {
       throw new Error(`Either "webhook" or "webhook_from_env" is required`);
     }
@@ -128,11 +127,11 @@ class Hasura {
           delete: params.delete,
           headers: params.headers,
           retry_conf: params.retry_conf,
-          replace: params.replace,
-        },
+          replace: params.replace
+        }
       },
       {
-        headers: this.getHeaders(),
+        headers: this.getHeaders()
       }
     );
   }
@@ -147,11 +146,11 @@ class Hasura {
       {
         type: 'delete_event_trigger',
         args: {
-          name: triggerName,
-        },
+          name: triggerName
+        }
       },
       {
-        headers: this.getHeaders(),
+        headers: this.getHeaders()
       }
     );
   }
@@ -166,30 +165,48 @@ class Hasura {
       {
         type: 'redeliver_event',
         args: {
-          event_id: eventId,
-        },
+          event_id: eventId
+        }
       },
       {
-        headers: this.getHeaders(),
+        headers: this.getHeaders()
       }
     );
   }
 
   /**
    * Used to invoke an event trigger with custom payload
-   * @param params InvokeEventTriggerParams 
+   * @param params InvokeEventTriggerParams
    */
-  invokeEventTrigger(
-    params: InvokeEventTriggerParams
-  ): Promise<HasuraResponse> {
+  invokeEventTrigger(params: InvokeEventTriggerParams): Promise<HasuraResponse> {
     return axios.post<HasuraQueryResponse>(
       this.queryEndpoint,
       {
         type: 'invoke_event_trigger',
         args: {
           name: params.name,
-          payload: params.payload,
-        },
+          payload: params.payload
+        }
+      },
+      { headers: this.getHeaders() }
+    );
+  }
+
+  /**
+   * Can be used to run arbitrary SQL statements.
+   * @params params RunSQLParams
+   */
+  runSQL(params: RunSQLParams): Promise<HasuraRunSQLAxiosResponse> {
+    return axios.post<HasuraRunSQLResponse>(
+      this.queryEndpoint,
+      {
+        type: 'run_sql',
+        args: {
+          sql: params.sql,
+          cascade: params.cascade,
+          check_metadata_consistency: params.check_metadata_consistency,
+          read_only: params.read_only
+        }
       },
       { headers: this.getHeaders() }
     );

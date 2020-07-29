@@ -94,7 +94,7 @@ We currently only support a small range of Hasura APIs. Be assured we working on
 
 | API                   | Support    |
 | --------------------- | ---------- |
-| Run SQL               | No         |
+| <b>Run SQL</b>        | <b>Yes</b> |
 | Tables/Views          | No         |
 | Custom SQL Functions  | No         |
 | Relationships         | No         |

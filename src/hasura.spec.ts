@@ -8,7 +8,7 @@ const ADMIN_SECRET = process.env.HASURA_ADMIN_SECRET ?? 'testsecret';
 test('constructor', (t) => {
   const hasura = new Hasura({
     endpoint: ENDPOINT,
-    adminSecret: ADMIN_SECRET,
+    adminSecret: ADMIN_SECRET
   });
 
   t.is(hasura.endpoint, ENDPOINT);
@@ -19,7 +19,7 @@ test('constructor', (t) => {
 test('getHeaders', (t) => {
   const hasura = new Hasura({
     endpoint: ENDPOINT,
-    adminSecret: ADMIN_SECRET,
+    adminSecret: ADMIN_SECRET
   });
 
   t.deepEqual(hasura.getHeaders(), { 'x-hasura-admin-secret': ADMIN_SECRET });
@@ -28,14 +28,14 @@ test('getHeaders', (t) => {
 test('createEventTrigger Error', async (t) => {
   const hasura = new Hasura({
     endpoint: ENDPOINT,
-    adminSecret: ADMIN_SECRET,
+    adminSecret: ADMIN_SECRET
   });
 
   await t.throwsAsync(
     async () => {
       await hasura.createEventTrigger({
         name: 'missing webhook',
-        table: { name: 'mytable', schema: 'myschema' },
+        table: { name: 'mytable', schema: 'myschema' }
       });
     },
     { instanceOf: Error }
@@ -45,14 +45,14 @@ test('createEventTrigger Error', async (t) => {
 test('createCronTrigger', async (t) => {
   const hasura = new Hasura({
     endpoint: ENDPOINT,
-    adminSecret: ADMIN_SECRET,
+    adminSecret: ADMIN_SECRET
   });
 
   await t.notThrowsAsync(async () => {
     await hasura.createCronTrigger({
       name: 'test_cron',
       schedule: '* * * * *',
-      webhook: 'https://httpbin.org/post',
+      webhook: 'https://httpbin.org/post'
     });
   });
 });
@@ -60,7 +60,7 @@ test('createCronTrigger', async (t) => {
 test('deleteCronTrigger', async (t) => {
   const hasura = new Hasura({
     endpoint: ENDPOINT,
-    adminSecret: ADMIN_SECRET,
+    adminSecret: ADMIN_SECRET
   });
 
   await t.notThrowsAsync(async () => {
@@ -69,7 +69,7 @@ test('deleteCronTrigger', async (t) => {
       schedule: '* * * * *',
       webhook: 'https://httpbin.org/post',
       payload: {
-        hello: 'world',
+        hello: 'world'
       },
       replace: true,
       include_in_metadata: true
@@ -82,7 +82,7 @@ test('deleteCronTrigger', async (t) => {
 test('createScheduledTrigger', async (t) => {
   const hasura = new Hasura({
     endpoint: ENDPOINT,
-    adminSecret: ADMIN_SECRET,
+    adminSecret: ADMIN_SECRET
   });
 
   await t.notThrowsAsync(async () => {
@@ -90,8 +90,26 @@ test('createScheduledTrigger', async (t) => {
       schedule_at: '2999-12-31T14:00:00.000Z',
       webhook: 'https://httpbin.org/post',
       payload: {
-        hello: 'world',
-      },
+        hello: 'world'
+      }
     });
+  });
+});
+
+test('runSQL', async (t) => {
+  const hasura = new Hasura({
+    endpoint: ENDPOINT,
+    adminSecret: ADMIN_SECRET
+  });
+
+  await t.notThrowsAsync(async () => {
+    const resp = await hasura.runSQL({
+      sql: `create table item ( id serial,  name text,  category text,  primary key (id))`,
+      read_only: false,
+      check_metadata_consistency: false
+    });
+
+    t.is(resp.data.result_type, 'CommandOk');
+    t.is(resp.data.result, null);
   });
 });

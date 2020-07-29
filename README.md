@@ -15,6 +15,8 @@
   <a href="https://codecov.io/gh/aaronhayes/hasura-sdk">
     <img src="https://codecov.io/gh/aaronhayes/hasura-sdk/branch/master/graph/badge.svg" />
   </a>
+  <a href="https://codeclimate.com/github/aaronhayes/hasura-sdk/maintainability"><img src="https://api.codeclimate.com/v1/badges/02998e4b9a8f31ab2f6d/maintainability" /></a>
+  
 </p>
 
 ---

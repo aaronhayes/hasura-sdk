@@ -139,10 +139,10 @@ export type CreateEventTriggerParams = {
 
 export type InvokeEventTriggerParams = {
   // Name of the event trigger
-  name: string;
+  readonly name: string;
 
   // Some JSON payload to send to the trigger
-  payload: EventPayload;
+  readonly payload: EventPayload;
 };
 
 export type HasuraQueryResponse = {
@@ -155,23 +155,23 @@ export type HasuraResponse = AxiosResponse<HasuraQueryResponse>;
 
 export type RunSQLParams = {
   // The SQL to be executed
-  sql: string;
+  readonly sql: string;
 
   // When set to true, the effect is cascaded
-  cascade?: boolean;
+  readonly cascade?: boolean;
 
   // When set to false, the sql is executed without checking metadata dependencies
-  check_metadata_consistency?: boolean;
+  readonly check_metadata_consistency?: boolean;
 
   // When true the request will be run in READ ONLY transaction acccess mode
-  read_only?: boolean;
+  readonly read_only?: boolean;
 };
 
-export type ResultTuple = string[];
+export type ResultTuple = readonly string[];
 
 export type HasuraRunSQLResponse = {
-  result_type: string;
-  result?: ResultTuple[];
+  readonly result_type: string;
+  readonly result?: readonly ResultTuple[];
 };
 
 export type HasuraRunSQLAxiosResponse = AxiosResponse<HasuraRunSQLResponse>;

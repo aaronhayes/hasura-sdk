@@ -56,7 +56,7 @@ test('deleteCronTrigger', async (t) => {
 
   await t.notThrowsAsync(async () => {
     await hasura.createCronTrigger({
-      name: 'test_cron',
+      name: 'test_cron_delete',
       schedule: '* * * * *',
       webhook: 'https://httpbin.org/post',
       payload: {
@@ -64,7 +64,7 @@ test('deleteCronTrigger', async (t) => {
       },
     });
 
-    await hasura.deleteCronTrigger('test_cron');
+    await hasura.deleteCronTrigger('test_cron_delete');
   });
 });
 

@@ -9,11 +9,8 @@
   <a href="https://prettier.io">
     <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="code style: prettier" />
   </a>
-  <a href="https://circleci.com/gh/aaronhayes/hasura-sdk">
-    <img src="https://circleci.com/gh/aaronhayes/hasura-sdk.svg?style=svg"/>
-  </a>
-    <a href="https://github.com/aaronhayes/hasura-sdk/actions">
-    <img src="https://github.com/aaronhayes/hasura-sdk/workflows/Tests/badge.svg?branch=master"/>
+  <a href="https://github.com/aaronhayes/hasura-sdk/actions">
+    <img src="https://github.com/aaronhayes/hasura-sdk/workflows/Test/badge.svg?branch=master"/>
   </a>
   <a href="https://codecov.io/gh/aaronhayes/hasura-sdk">
     <img src="https://codecov.io/gh/aaronhayes/hasura-sdk/branch/master/graph/badge.svg" />

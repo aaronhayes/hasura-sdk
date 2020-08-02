@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/aaronhayes/hasura-sdk/compare/v1.3.3...v1.4.0) (2020-08-02)
+
+
+### Features
+
+* **tables/views:** added Tables/Views APIs ([f5d2f55](https://github.com/aaronhayes/hasura-sdk/commit/f5d2f55a5b6826c3e71cdbe64e29fac90e43d4b7))
+
 ### [1.3.3](https://github.com/aaronhayes/hasura-sdk/compare/v1.3.2...v1.3.3) (2020-07-30)
 
 

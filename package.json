@@ -41,7 +41,7 @@
     "version": "standard-version",
     "reset": "git clean -dfx && git reset --hard && yarn",
     "clean": "trash build test",
-    "prepare-release": "run-s reset build docs:html version docs:publish"
+    "prepare-release": "run-s reset build test docs:html version docs:publish"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",

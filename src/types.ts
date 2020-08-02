@@ -1,4 +1,5 @@
 import { AxiosResponse } from 'axios';
+import { TableName, TableConfig, CustomRootFields, CustomColumnNames } from './HasuraMetadataV2';
 
 export type EventPayload = {
   readonly [key: string]: any;
@@ -175,3 +176,45 @@ export type HasuraRunSQLResponse = {
 };
 
 export type HasuraRunSQLAxiosResponse = AxiosResponse<HasuraRunSQLResponse>;
+
+export type TrackTableV2Args = {
+  readonly table: TableName;
+  readonly configuration: TableConfig;
+};
+
+export type SetTableCustomFieldsArgs = {
+  readonly table: TableName;
+  readonly custom_root_fields?: CustomRootFields;
+  readonly custom_column_name?: CustomColumnNames;
+};
+
+export type TrackTableArgs = {
+  readonly table: TableName;
+  readonly is_enum?: boolean;
+};
+
+export type UntrackTableArgs = {
+  readonly table: TableName;
+  readonly cascade?: boolean;
+};
+
+export type SetEnumTableArgs = {
+  readonly table: TableName;
+  readonly is_enum: boolean;
+};
+
+export type TrackTableResponse = AxiosResponse<{
+  message: string;
+}>;
+
+export type SetTableIsEnumResponse = AxiosResponse<{
+  message: string;
+}>;
+
+export type SetTableCustomFieldsResponse = AxiosResponse<{
+  message: string;
+}>;
+
+export type UntrackTableResponse = AxiosResponse<{
+  message: string;
+}>;

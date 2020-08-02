@@ -92,20 +92,21 @@ hasura.createCronTrigger({
 
 We currently only support a small range of Hasura APIs. Be assured we working on adding more - if you need something be sure to create an issue!
 
-| API                   | Support    |
-| --------------------- | ---------- |
-| <b>Run SQL</b>        | <b>Yes</b> |
-| Tables/Views          | No         |
-| Custom SQL Functions  | No         |
-| Relationships         | No         |
-| Computed Fields       | No         |
-| Permissions           | No         |
-| <b>Event Triggers</b> | <b>Yes</b> |
-| Remote Schemas        | No         |
-| Query Collections     | No         |
-| Custom Types          | No         |
-| Actions               | No         |
-| Manage Metadata       | No         |
+| API                       | Support    |
+| ------------------------- | ---------- |
+| <b>Run SQL</b>            | <b>Yes</b> |
+| <b>Tables/Views</b>       | <b>Yes</b> |
+| Custom SQL Functions      | No         |
+| Relationships             | No         |
+| Computed Fields           | No         |
+| Permissions               | No         |
+| <b>Event Triggers</b>     | <b>Yes</b> |
+| <b>Scheduled Triggers</b> | <b>Yes</b> |
+| Remote Schemas            | No         |
+| Query Collections         | No         |
+| Custom Types              | No         |
+| Actions                   | No         |
+| Manage Metadata           | No         |
 
 ## Give us a star!
 

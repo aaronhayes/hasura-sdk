@@ -10,7 +10,16 @@ import {
   InvokeEventTriggerParams,
   RunSQLParams,
   HasuraRunSQLAxiosResponse,
-  HasuraRunSQLResponse
+  HasuraRunSQLResponse,
+  TrackTableArgs,
+  SetEnumTableArgs,
+  TrackTableResponse,
+  SetTableIsEnumResponse,
+  TrackTableV2Args,
+  SetTableCustomFieldsArgs,
+  SetTableCustomFieldsResponse,
+  UntrackTableArgs,
+  UntrackTableResponse
 } from './types';
 
 class Hasura {
@@ -209,6 +218,103 @@ class Hasura {
         }
       },
       { headers: this.getHeaders() }
+    );
+  }
+
+  // Tables/Views
+  /**
+   * Used to add table/view to the GraphQL schema
+   * @params args TrackTableArgs
+   */
+  trackTable(args: TrackTableArgs): Promise<TrackTableResponse> {
+    return axios.post(
+      this.queryEndpoint,
+      {
+        type: 'track_table',
+        args: {
+          ...args
+        }
+      },
+      {
+        headers: this.getHeaders()
+      }
+    );
+  }
+
+  /**
+   * Used to set if an already tracked table should be used as an enum table
+   * @params args TrackTableArgs
+   */
+  setTableIsEnum(args: SetEnumTableArgs): Promise<SetTableIsEnumResponse> {
+    return axios.post(
+      this.queryEndpoint,
+      {
+        type: 'set_table_is_enum',
+        args: {
+          ...args
+        }
+      },
+      {
+        headers: this.getHeaders()
+      }
+    );
+  }
+
+  /**
+   * Version 2 of track_table is used to add a table/view to the GraphQL schema with configuration. You can customise the root field names.
+   * @param args TrackTableV2ARgs
+   */
+  trackTableV2(args: TrackTableV2Args): Promise<TrackTableResponse> {
+    return axios.post(
+      this.queryEndpoint,
+      {
+        type: 'track_table',
+        version: 2,
+        args: {
+          ...args
+        }
+      },
+      { headers: this.getHeaders() }
+    );
+  }
+
+  /**
+   * Sets the custom root fields and custom column names of already tracked table.
+   * This will replace the already present custom fields configuration.
+   * @param args SetTableCustomFieldsArgs
+   */
+  setTableCustomFields(args: SetTableCustomFieldsArgs): Promise<SetTableCustomFieldsResponse> {
+    return axios.post(
+      this.queryEndpoint,
+      {
+        type: 'set_table_custom_fields',
+        version: 2,
+        args: {
+          ...args
+        }
+      },
+      {
+        headers: this.getHeaders()
+      }
+    );
+  }
+
+  /**
+   * Used to remove a table/view from the GraphQL schema.
+   * @param args UntrackTableArgs
+   */
+  untrackTable(args: UntrackTableArgs): Promise<UntrackTableResponse> {
+    return axios.post(
+      this.queryEndpoint,
+      {
+        type: 'untrack_table',
+        args: {
+          ...args
+        }
+      },
+      {
+        headers: this.getHeaders()
+      }
     );
   }
 }

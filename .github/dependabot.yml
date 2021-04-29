@@ -1,0 +1,39 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "19:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: typedoc
+    versions:
+    - 0.20.19
+    - 0.20.20
+    - 0.20.21
+    - 0.20.23
+    - 0.20.24
+    - 0.20.25
+    - 0.20.27
+    - 0.20.28
+    - 0.20.29
+    - 0.20.30
+    - 0.20.32
+    - 0.20.33
+    - 0.20.34
+    - 0.20.35
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+  - dependency-name: highlight.js
+    versions:
+    - 10.6.0
+    - 10.7.1
+  - dependency-name: standard-version
+    versions:
+    - 9.1.1
+  - dependency-name: typescript
+    versions:
+    - 3.9.8
+    - 3.9.9
